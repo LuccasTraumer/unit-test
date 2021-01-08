@@ -7,4 +7,8 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'unit-test';
+
+  somarValores(primeroValor: number, segundoValore:number) {
+    return primeroValor + segundoValore;
+  }
 }

@@ -3,6 +3,10 @@ import { RouterTestingModule } from '@angular/router/testing';
 import { AppComponent } from './app.component';
 
 describe('AppComponent', () => {
+
+  let primeiroValor: number;
+  let segundoValor: number;
+
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [
@@ -32,4 +36,12 @@ describe('AppComponent', () => {
     const compiled = fixture.nativeElement;
     expect(compiled.querySelector('.content span').textContent).toContain('unit-test app is running!');
   });
+
+  it('deve somar 10 + 10', () => {
+    const fixture = TestBed.createComponent(AppComponent);
+    const app = fixture.componentInstance;
+    primeiroValor = segundoValor = 10;
+    expect(app.somarValores(primeiroValor, segundoValor)).toBe(20);
+  })
+
 });
